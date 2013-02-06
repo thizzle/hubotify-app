@@ -1,0 +1,32 @@
+{
+    "AppDescription": {
+        "en": "Hubotify"
+    },
+    "AppName": {
+        "en": "Hubotify"
+    },
+    "BundleIdentifier": "hubotify",
+    "BundleType": "Application",
+    "BundleVersion": "0.1",
+    "DefaultTabs": [
+        {
+            "arguments": "index",
+            "title": {
+                "en": "Home"
+            }
+        }
+    ],
+    "Dependencies": {
+      "api": "0.2.3",
+      "util": "0.1.0",
+      "resources": "0.2.2"
+  },
+    "RequiredInterface": 1,
+    "RequiredPermissions": [
+        "http://local.aries.dev:8080"
+    ],
+    "SupportedLanguages": [
+        "en"
+    ],
+    "VendorIdentifier": "co.thizzle"
+}

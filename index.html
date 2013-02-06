@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Hubotify</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="http://local.aries.dev:8080/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="#">Hubotify</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="content">
+            <form id="hubot-room">
+                <legend>Hubot Settings</legend>
+                <fieldset>
+                    <label>Team Room</label>
+                    <input type="text" name="room" id="room" />
+                    <button type="submit" class="btn" id="btn-submit">Submit</button>
+                </fieldset>
+            </form>
+            <ul></ul>
+        </div> <!-- /container -->
+
+        <script src="js/hubotify.js"></script>
+    </body>
+</html>
