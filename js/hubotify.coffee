@@ -1,5 +1,6 @@
 hubotify =
   socket: null
+  playlist: null
   init: () ->
     socket = io.connect 'http://local.aries.dev:8080'
 
@@ -17,7 +18,11 @@ hubotify =
     socket.on 'welcome', (data) ->
       hubotify.trackEvent "Connected to Hubot #{data.name}"
 
-    trackEvent: (evt, user) ->
+    socket.on 'trackdrop', (track) ->
+      if this.playlist
+        this.playlist.remove track.uri
+
+  trackEvent: (evt, user) ->
     evtItem = document.createElement 'li';
     evtItem.innerHTML = evt;
 
