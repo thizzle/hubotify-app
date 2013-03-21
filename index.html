@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
 
-        <script src="http://local.aries.dev:8080/socket.io/socket.io.js"></script>
+        <script src="http://localhost:8081/socket.io/socket.io.js"></script>
     </head>
     <body>
 
@@ -25,17 +25,31 @@
             </div>
         </div>
 
-        <div class="container" id="content">
-            <form id="hubot-room">
-                <legend>Hubot Settings</legend>
+        <div class="container well" id="content">
+            <form id="hubot-room" class="form-inline">
                 <fieldset>
-                    <label>Team Room</label>
-                    <input type="text" name="room" id="room" />
-                    <button type="submit" class="btn" id="btn-submit">Submit</button>
+                    <legend>Hubot Settings</legend>
+
+                    <p>
+                        <label>Team Room</label>
+                        <input type="text" name="room" id="room" />
+                    </p>
+
+                    <p>
+                        <label>Playlist URI</label>
+                        <input type="text" name="playlisturi" id="playlisturi" placeholder="spotify://" />
+                    </p>
+
+                    <button type="button" class="btn" id="btn-update-settings">Update</button>
                 </fieldset>
             </form>
-            <ul></ul>
         </div> <!-- /container -->
+
+        <div class="container well" id="activity">
+            <h4>Activity Log</h4>
+            <ul>
+            </ul>
+        </div>
 
         <script src="js/hubotify.js"></script>
     </body>
