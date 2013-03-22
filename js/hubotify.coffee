@@ -26,6 +26,11 @@ hubotify =
     player.observe models.EVENT.CHANGE, (evt) ->
       socket.emit 'trackchnge', player.track
 
+    socket.on 'connection', (socket) ->
+      hubotify.activity "Connection to Hubot established successfully"
+      socket.on 'disconnect', ->
+        hubotify.activity "Connection to Hubot lost"
+
     socket.on 'welcome', (data) ->
       hubotify.activity "Connected to Hubot: #{data.name}"
 
@@ -36,6 +41,9 @@ hubotify =
         hubotify.activity "Removed track '#{track.name}' from '#{track.artists[0].name}' from playlist"
       else
         hubotify.activity "Track removal request received, but no playlist being managed!", 1
+
+    socket.on 'play:next', ->
+      player.next()
 
   # Log an activity event
   activity: (evt, level = 0) ->
